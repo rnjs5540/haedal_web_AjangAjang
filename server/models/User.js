@@ -52,6 +52,7 @@ userSchema.pre('save', function(next) {
 
 
 userSchema.methods.comparePassword = function(plainPassword, cb) {
+    /*cb: error, isMatch를 인자로 가지는 함수*/
     
     // plainPassword dydals123    암호화된 비밀번호 $2b$10$1DbiJmXbnhidFnNRDnACUO//Ft7clKjFalHvkAax3GnPmEnii.fNy
     bcrypt.compare(plainPassword, this.password, function(err, isMatch) {

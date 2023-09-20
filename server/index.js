@@ -46,7 +46,6 @@ app.post('/api/users/register', async (req, res) => {
 })
 
 app.post('/api/users/login', (req, res) => {
-    
     // 요청된 이메일이 DB에 있는지 확인
     User.findOne({ email: req.body.email }).then(user => {
         if (!user) {
